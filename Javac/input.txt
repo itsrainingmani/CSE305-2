@@ -1,0 +1,6 @@
+pop
+push 10
+push 20
+quit
+push 30
+quit

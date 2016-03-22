@@ -17,7 +17,10 @@ public class hw2 {
 
             ArrayList stack = new ArrayList();
             while ((line = br.readLine()) != null){
-                parse(line, stack);
+            	   if (line.contains("quit"))
+            	   	break;
+            	   else
+            	   	parse(line, stack);
             }
             for (int i = stack.size() - 1; i >= 0; i--){
                 bw.write(stack.get(i) + "\n");
@@ -58,7 +61,8 @@ public class hw2 {
             }
         }
         else if (command.contains("push")){
-            String num = command.replaceAll("[^0-9?!\\.]","");
+            //String num = command.replaceAll("[^0-9?!\\.]","");
+            String num = command.substring(5, command.length());
             if (num.contains("."))
                 stack.add(":error:");
             else{
